@@ -33,3 +33,8 @@ SetTest
 *.exe
 *.out
 *.app
+
+# Local Files
+.vscode
+*.zip
+.DS_Store

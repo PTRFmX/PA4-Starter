@@ -1,20 +1,26 @@
 #include "Set.h"
-
+#include <algorithm>
 /**
  * Implement the ArrayListSet methods correctly
  */
 unsigned int ArrayListSet::size() {
-    /* YOUR CODE HERE */
+    return arr.size();
 }
 
 void ArrayListSet::insert(string s) {
-    /* YOUR CODE HERE */
+    if (find(s)) return;
+    arr.push_back(s);
 }
 
 void ArrayListSet::remove(const string & s) {
-    /* YOUR CODE HERE */
+    for (std::vector<string>::iterator itr = arr.begin(); itr != arr.end(); itr++) {
+        if (*itr == s) {
+            arr.erase(itr);
+            return;
+        }
+    }
 }
 
 bool ArrayListSet::find(const string & s) {
-    /* YOUR CODE HERE */
+    return std::find(arr.begin(), arr.end(), s) != arr.end();
 }
